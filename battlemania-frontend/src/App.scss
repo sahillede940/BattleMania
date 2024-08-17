@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background: black;
+  font-family: sans-serif;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  font-size: 1.2rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: #333;
+  transition: background 0.3s;
+  margin: 10px;
+  &:hover {
+    background: #555;
+  }
+}
+
+input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin: 10px;
+} 

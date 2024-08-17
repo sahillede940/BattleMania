@@ -1,0 +1,33 @@
+.room-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  
+  .room {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .room-name {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .room-info {
+      display: flex;
+      justify-content: space-between;
+      .room-info-item {
+        display: flex;
+        align-items: center;
+        .room-info-icon {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

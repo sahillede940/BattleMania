@@ -1,0 +1,220 @@
+[
+  {
+    "question": "Which is the tallest mountain in the world?",
+    "options": ["K2", "Mount Kilimanjaro", "Mount Everest", "Mount Fuji"],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is the longest river in the world?",
+    "options": [
+      "Amazon River",
+      "Nile River",
+      "Yangtze River",
+      "Mississippi River"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which is the largest rainforest on Earth?",
+    "options": [
+      "Congo Rainforest",
+      "Amazon Rainforest",
+      "Daintree Rainforest",
+      "Valdivian Temperate Rainforest"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "What gas do plants absorb from the atmosphere?",
+    "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which planet is known as the Red Planet?",
+    "options": ["Earth", "Mars", "Jupiter", "Saturn"],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "What type of animal is a Komodo dragon?",
+    "options": ["Mammal", "Bird", "Reptile", "Amphibian"],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which is the smallest ocean in the world?",
+    "options": [
+      "Indian Ocean",
+      "Southern Ocean",
+      "Arctic Ocean",
+      "Atlantic Ocean"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is the most common gas in the Earth's atmosphere?",
+    "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is the primary source of energy for the Earth?",
+    "options": ["The Moon", "The Sun", "The Stars", "Volcanoes"],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is the largest ocean on Earth?",
+    "options": [
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Arctic Ocean",
+      "Pacific Ocean"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which is the tallest mountain in the world?",
+    "options": ["K2", "Mount Kilimanjaro", "Mount Everest", "Mount Fuji"],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is the longest river in the world?",
+    "options": [
+      "Amazon River",
+      "Nile River",
+      "Yangtze River",
+      "Mississippi River"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which is the largest rainforest on Earth?",
+    "options": [
+      "Congo Rainforest",
+      "Amazon Rainforest",
+      "Daintree Rainforest",
+      "Valdivian Temperate Rainforest"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "What gas do plants absorb from the atmosphere?",
+    "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is the largest ocean on Earth?",
+    "options": [
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Arctic Ocean",
+      "Pacific Ocean"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which is the tallest mountain in the world?",
+    "options": ["K2", "Mount Kilimanjaro", "Mount Everest", "Mount Fuji"],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is the longest river in the world?",
+    "options": [
+      "Amazon River",
+      "Nile River",
+      "Yangtze River",
+      "Mississippi River"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which is the largest rainforest on Earth?",
+    "options": [
+      "Congo Rainforest",
+      "Amazon Rainforest",
+      "Daintree Rainforest",
+      "Valdivian Temperate Rainforest"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "What gas do plants absorb from the atmosphere?",
+    "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which planet is known as the Red Planet?",
+    "options": ["Earth", "Mars", "Jupiter", "Saturn"],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "What type of animal is a Komodo dragon?",
+    "options": ["Mammal", "Bird", "Reptile", "Amphibian"],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which is the smallest ocean in the world?",
+    "options": [
+      "Indian Ocean",
+      "Southern Ocean",
+      "Arctic Ocean",
+      "Atlantic Ocean"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is the most common gas in the Earth's atmosphere?",
+    "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is the primary source of energy for the Earth?",
+    "options": ["The Moon", "The Sun", "The Stars", "Volcanoes"],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is the largest land animal?",
+    "options": ["African Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which bird is known for its colorful feathers and ability to mimic sounds?",
+    "options": ["Crow", "Sparrow", "Parrot", "Penguin"],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is the process by which plants make their food?",
+    "options": ["Respiration", "Photosynthesis", "Digestion", "Fermentation"],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which of these is a type of deciduous tree?",
+    "options": ["Pine", "Fir", "Maple", "Spruce"],
+    "answer": 2,
+    "difficulty": "easy"
+  }
+]
