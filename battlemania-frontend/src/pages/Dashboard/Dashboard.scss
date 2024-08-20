@@ -1,33 +1,111 @@
-.room-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
-  
-  .room {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 200px;
-    height: 200px;
+// Color Variables
+$primary-color: #4caf50;
+$secondary-color: #333;
+$background-color: #f5f5f5;
+$text-color: #fff;
+$hover-color: darken($primary-color, 10%);
+
+.dashboard-container {
+  .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    .room-name {
-      font-size: 20px;
-      font-weight: bold;
-    }
-    .room-info {
-      display: flex;
-      justify-content: space-between;
-      .room-info-item {
-        display: flex;
-        align-items: center;
-        .room-info-icon {
-          margin-right: 5px;
-        }
-      }
+    align-items: center;
+    padding: 1.5rem;
+    background-color: $background-color;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 2rem auto;
+  }
+
+  .username {
+    color: $primary-color;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    background-color: $primary-color;
+    color: $text-color;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 1rem;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+
+    &.logout-button {
+      background-color: lighten($primary-color, 10%);
+    }
+
+    &:disabled {
+      background-color: darken($primary-color, 20%);
+      cursor: not-allowed;
+    }
+  }
+
+  .messages-container {
+    padding: 1.5rem;
+    background-color: $background-color;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .message {
+    background-color: lighten($background-color, 10%);
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+
+  .create-room-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .input-field {
+    width: calc(100% - 110px);
+    padding: 0.5rem;
+    margin-right: 10px;
+    border: 1px solid $secondary-color;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  .room-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .room {
+    background-color: $background-color;
+    border: 1px solid $secondary-color;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+
+    .btn {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  } 
 }

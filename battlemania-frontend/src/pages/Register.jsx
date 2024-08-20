@@ -38,32 +38,42 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Register</h1>
-      <form onSubmit={registerUser}>
-        <input
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          type="text"
-          placeholder="User Name"
-        />
-        <br />
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          placeholder="Email"
-        />
-        <br />
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          placeholder="Password"
-        />
-        <br />
-        <input type="submit" value="Register" />
-        <Link to="/login">Login</Link>
+    <div className="auth-container">
+      <h1 className="auth-title">Register</h1>
+      <form className="auth-form" onSubmit={registerUser}>
+        <div className="input-group">
+          <input
+            className="input-field"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            type="text"
+            placeholder="User Name"
+          />
+        </div>
+        <div className="input-group">
+          <input
+            className="input-field"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="Email"
+          />
+        </div>
+        <div className="input-group">
+          <input
+            className="input-field"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            placeholder="Password"
+          />
+        </div>
+        <div className="input-group">
+          <input className="submit-button" type="submit" value="Register" />
+        </div>
+        <Link className="register-link" to="/login">
+          Login
+        </Link>
       </form>
     </div>
   );

@@ -6,8 +6,10 @@ import axios from "axios";
 import "./Room.scss";
 import { toast } from "react-toastify";
 import Canvas from "./Canvas";
-
-const RoomContext = createContext();
+import { RoomContext } from "../../Contexts";
+import Messages from "../Messages/Messages.jsx";
+import UserStatusDialog from "./UserStatusDialog";
+import { Link } from "react-router-dom";
 
 const Room = () => {
   const { roomId } = useParams();
@@ -38,6 +40,11 @@ const Room = () => {
     if (!socket) return;
 
     socket.on("receive_message", (message) => {
+
+      if(messages.length > 5){
+        setMessages((prevMessages) => prevMessages.slice(1));
+      }
+
       setMessages((prevMessages) => [
         ...prevMessages,
         {
@@ -59,7 +66,6 @@ const Room = () => {
       socket.off("receive_message");
       socket.off("joined_users");
       socket.off("notAllReady");
-      socket.off("game_started");
     };
   }, [socket, messages]);
 
@@ -71,59 +77,42 @@ const Room = () => {
 
   return (
     <div>
-      <p>
-        Room Joined: <b>{room?.name}</b>
-      </p>
-      <button onClick={() => leaveRoom(roomId)}>Leave Room</button>
-      <div>
-        <input
-          type="text"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
-        <button onClick={() => sendMessage(roomId)}>Send Message </button>
-      </div>
-      <div>
-        {messages.map((msg, index) => (
-          <p key={index}>
-            {msg.username} : {msg.message}
-          </p>
-        ))}
-      </div>
+      <RoomContext.Provider
+        value={{
+          gameStarted,
+          setGameStarted,
+          roomId,
+          message,
+          messages,
+          setMessage,
+          setMessages,
+          sendMessage,
+        }}
+      >
+        <div className="room-container">
+          <header className="room-header">
+            <p className="room-info">
+              Room Joined: <b>{room?.name}</b>
+              {gameStarted && (
+                <span className="game-status">(Game Started)</span>
+              )}
+            </p>
+            <button
+              className="btn leave-room-button"
+              onClick={() => leaveRoom(roomId)}
+            >
+              Leave Room
+            </button>
+          </header>
 
-      {/* Ready or Not ready option */}
+          <Messages />
 
-      {!gameStarted && (
-        <div className="game_dialog">
-          <div>
-            <p>Players</p>
-            <ul>
-              {Object.keys(usersJoined).map((userId, index) => (
-                <li key={index}>
-                  {usersJoined[userId].username} -{" "}
-                  {usersJoined[userId].ready ? "Ready" : "Not Ready"}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {!gameStarted && (
+            <UserStatusDialog room={room} usersJoined={usersJoined} />
+          )}
 
-          <button onClick={() => socket.emit("playerReady", room._id)}>
-            Ready
-          </button>
-          <button onClick={() => socket.emit("playerNotReady", room._id)}>
-            Not Ready
-          </button>
-
-          {/* Start Game button */}
-
-          <button onClick={() => socket.emit("startGame", room._id)}>
-            Start Game
-          </button>
+          <Canvas />
         </div>
-      )}
-
-      <RoomContext.Provider value={{ gameStarted, setGameStarted }}>
-        <Canvas />
       </RoomContext.Provider>
     </div>
   );

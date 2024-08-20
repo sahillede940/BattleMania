@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from "react";
 import "./Dashboard.scss";
 import { disconnectSocket, getSocket } from "../../services/socket";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const [user, setUser] = useState(() =>
     JSON.parse(localStorage.getItem("user"))
   );
   const [rooms, setRooms] = useState([]);
-  const [createdRoom, setCreatedRoom] = useState(null);
+  const [createdRoom, setCreatedRoom] = useState("");
 
   const socket = getSocket();
 
   const createRoom = () => {
-    console.log("Creating room", createdRoom);
     socket.emit("create_room", {
       name: createdRoom,
       createdBy: socket.user._id,
       description: "This is a test room",
     });
+    setCreatedRoom("");
   };
 
   const navigate = useNavigate();
@@ -63,31 +63,53 @@ const Dashboard = () => {
   }, [socket, messages]);
 
   return (
-    <div>
-      <div className="containter">
-        <p>User Name: {user.username}</p>
-        <button onClick={logout}>Logout</button>
+    <div className="dashboard-container">
+      <div className="container">
+        <p>
+          User Name:{" "}
+          <Link to={`/profile/${user.username}`} className="username">
+            {user.username}
+          </Link>
+        </p>
+        <div>
+          <button className="btn logout-button" onClick={logout}>
+            Logout
+          </button>
+          <Link to="/leaderboard">
+            <button className="btn logout-button">LeaderBoard</button>
+          </Link>
+        </div>
       </div>
 
-      <div>
-        {messages.map((msg, index) => (
-          <p key={index}>{msg}</p>
-        ))}
-      </div>
-
-      <div>
-        <input type="text" onChange={(e) => setCreatedRoom(e.target.value)} />
-        <button className="btn" onClick={createRoom} disabled={!createdRoom}>
+      <div className="create-room-container">
+        <input
+          type="text"
+          value={createdRoom}
+          onChange={(e) => setCreatedRoom(e.target.value)}
+          className="input-field"
+        />
+        <button
+          className="btn create-room-button"
+          onClick={createRoom}
+          disabled={!createdRoom}
+        >
           Create Room
         </button>
       </div>
+
       <div className="room-container">
         {rooms.map((room) => (
           <div key={room._id} className="room">
             <p>Name: {room.name}</p>
             <p>Creator: {room.createdBy}</p>
-            <button onClick={() => joinRoom(room._id)}>Join</button>
             <button
+              className="btn join-room-button"
+              onClick={() => joinRoom(room._id)}
+            >
+              Join
+            </button>
+            <button
+              className="btn delete-room-button"
               onClick={() => socket.emit("delete_room", { roomId: room._id })}
             >
               Delete

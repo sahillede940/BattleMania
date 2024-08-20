@@ -1,0 +1,85 @@
+// Color Variables
+$primary-color: #4caf50;
+$secondary-color: #333;
+$background-color: #f5f5f5;
+$text-color: #333;
+$highlight-color: #2e8b57;
+$border-color: #ddd;
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: $background-color;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 2rem auto;
+
+  .profile-title {
+    color: $secondary-color;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+
+  .user-info {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    .username {
+      font-size: 1.75rem;
+      color: $highlight-color;
+    }
+
+    .email {
+      font-size: 1.2rem;
+      color: $secondary-color;
+    }
+  }
+
+  .stats-container {
+    margin-bottom: 2rem;
+
+    h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: $secondary-color;
+
+      span {
+        font-weight: bold;
+        color: $highlight-color;
+      }
+    }
+  }
+
+  .challenge-history {
+    width: 100%;
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: $secondary-color;
+      border-bottom: 2px solid $border-color;
+      padding-bottom: 0.5rem;
+    }
+
+    .challenge {
+      background-color: lighten($background-color, 10%);
+      border: 1px solid $border-color;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+
+      .challenge-result {
+        font-size: 1.25rem;
+        color: $highlight-color;
+      }
+
+      .challenge-score {
+        font-size: 1rem;
+        color: $secondary-color;
+      }
+    }
+  }
+}

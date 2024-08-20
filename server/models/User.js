@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import UserStat from "./UserStat.js";
 
 const UserSchema = new mongoose.Schema(
   {
@@ -19,6 +20,15 @@ const UserSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+// create UserStat model
+UserSchema.post("save", async function (doc, next) {
+  const userStat = new UserStat({
+    user: doc._id,
+  });
+  await userStat.save();
+  next();
+});
 
 const User = mongoose.model("User", UserSchema);
 export default User;
